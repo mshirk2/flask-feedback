@@ -1,13 +1,13 @@
 {% extends 'base.html' %}
 
-{% block title %}Register{% endblock %}
+{% block title %}Login{% endblock %}
 
 {% block content %}
 
-<h1 class="display-1">Register</h1>
+<h1 class="display-1">Login</h1>
 <br>
 
-<form id="register-form" method="POST">
+<form id="login-form" method="POST">
     {{ form.hidden_tag() }}
 
     {% for field in form if field.widget.input_type != 'hidden'%}
@@ -29,10 +29,13 @@
     <br>
     <br>
 
-    <button type="submit" class="btn btn-primary">Register</button>
+    <button type="submit" class="btn btn-primary">Login</button>
     <a class="btn btn-secondary" href="/">Cancel</a>
 
 </form>
+<br>
+
+<p>Need to make an account? <a href='/register'>Register here</a></p>
 
 
 {% endblock %}

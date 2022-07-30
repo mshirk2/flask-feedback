@@ -1,6 +1,6 @@
 from flask_wtf import FlaskForm
 from wtforms import StringField, PasswordField
-from wtforms.validators import InputRequired
+from wtforms.validators import InputRequired, Length
 
 
 class RegisterForm(FlaskForm):
@@ -30,3 +30,13 @@ class LoginForm(FlaskForm):
     
     password = PasswordField("Password", validators=[
         InputRequired(message="Password is required")])
+
+
+class FeedbackForm(FlaskForm):
+    """Add feedback form"""
+
+    title = StringField("Title", validators=[InputRequired(), Length(max=50)])
+    content = StringField("Content", validators=[InputRequired()])
+
+class DeleteForm(FlaskForm):
+    """Delete form - intentionally left blank"""
